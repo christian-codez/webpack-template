@@ -1,0 +1,22 @@
+{
+  "name": "webpack-config",
+  "version": "1.0.0",
+  "description": "This is a base configuration for using webpack using laravel mix",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "production": "mix --production"
+  },
+  "author": "Christian Uchenna",
+  "license": "ISC",
+  "devDependencies": {
+    "laravel-mix": "^6.0.16",
+    "postcss": "^8.2.10",
+    "sass": "^1.32.10",
+    "sass-loader": "^11.0.1"
+  }
+}
