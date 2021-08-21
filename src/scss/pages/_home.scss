@@ -1,0 +1,298 @@
+.section-banner{
+	position: relative;
+	height: 100vh;
+	overflow: hidden;
+
+	@media only screen and (max-width: 767px) {
+		height: 60vh;
+	} 
+
+	&::before{
+		position: absolute;
+		content: '';
+		inset: 0;
+		background-color: rgba(#000, 0.8);
+		z-index: 1;
+	}
+
+	.img-wrapper{
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+
+	.content-container{
+		margin: auto;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 3;
+
+		.content{
+			text-align: center;
+
+			.pre-title{
+				color: lighten($black, 70%);
+				text-transform: uppercase;
+				font-size: 1.5rem;
+				letter-spacing: 2px;
+			}
+	
+			.banner-title{
+				color: $white;
+				font-size: 4rem;
+				text-transform: uppercase;
+				font-family: 'Righteous', cursive;
+
+				@media only screen and (max-width: 767px) {
+					font-size: 2rem;
+				} 
+			}
+		}
+
+		& > * {
+			position: relative;
+			z-index: 3;
+		}
+	}
+}
+
+.about-me{
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+
+	.content-col{
+
+		.about-pre-footer{
+			display: flex;
+			flex-grow: column wrap;
+			align-items: center;
+			gap: 1rem;
+			margin-top: 1rem;
+
+			.img-wrap{	
+				position: relative;
+				overflow: hidden;
+				height: 3.75rem;
+				width: 3.75rem;
+				border-radius: 50%;
+				border: 2px solid rgba($secondary, 0.75);
+				background-position: center;
+
+				.profile-photo{
+					margin: auto;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					object-fit: cover;
+					width: 100%;
+				}
+			}
+
+			.meta-info{
+				.author{
+					font-weight: 600;
+				}
+
+				span{
+					display: block;
+
+					&:not(:last-child){
+						margin-bottom: 0.25rem;
+					}
+					
+				}
+
+				.role{
+					display: block;
+					font-size: 0.875rem;
+					color: lighten($primary, 50%);
+				}
+
+				.contact-info{
+					font-size: 0.8rem;
+
+					i{
+						color: lighten($primary, 20%);;
+					}
+				}
+			}
+		}
+	}
+
+	.qualification-col{
+		@media only screen and (max-width: 767px) {
+			padding-top: 5rem;
+		} 
+		ul{
+			padding-left: 1rem;
+		}
+
+		.knowledge-domain{
+			position: relative;
+			overflow: hidden;
+
+			.heading{
+				font-weight: 600;
+			}
+			
+			.domains{
+				color: lighten($white, 60%);
+				display: flex;
+				gap: 0.5rem;
+				flex-flow: row wrap;
+
+				.domain{
+					background-color: $secondary;
+					padding: 0.3rem 0.5rem;
+					font-size: 9px;
+				}
+			}
+
+			&::before{
+				position: absolute;
+				content: "";
+				height: 100%;
+				left: 0;
+				width: 6px;
+				background-color: lighten($primary, 50%);
+				top: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			.content{
+				padding-left: 1rem;
+			}
+		}
+	}
+}
+
+.portfolio{
+	background-color: $primary;
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+
+	.section-title{
+		margin: auto;
+	}
+
+	p{
+		text-align: center;
+		margin-top: 1rem;
+		color: $white;
+	}
+}
+
+.contact-us{
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+	background: linear-gradient(180deg , rgba($white,1) 45%, $secondary 100%);
+
+	.img-col{
+		position: relative;
+
+		.img-wrap{
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			
+			img{
+				width: 100%;
+				object-fit: cover;
+			}
+
+			@media only screen and (max-width: 767px) {
+				display: none;
+			}
+		}
+	}
+}
+
+footer{
+	padding: 2rem;
+	background-color: $secondary;
+	text-align: center;
+
+	.socials{
+		display: flex;
+		margin: auto;
+		justify-content: center;
+		gap: 0.5rem;
+		margin-bottom: 1rem;
+
+		.social{
+			position: relative;
+			height: 20px;
+			width: 20px;
+			background-color: rgba($white, 0.75);
+			border-radius: 50%;
+			padding: 1rem;
+			transition: background-color 0.3s;
+
+			&:hover, &:focus, &:active {
+				background-color: lighten($primary, 30%);
+
+				i{
+					color: $white;
+				}
+			}
+
+			i{
+				margin: auto;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				color: lighten($primary, 30%);
+				transition:  color 0.3s;
+			}
+		}
+	}
+}
+
+input, textarea{
+	&.form-control{
+		&:active, &:focus, &:active {
+			box-shadow: 0 0 2px 0.25rem lighten($primary, 55%);
+			border-color: lighten($dark, 40%);
+		}
+
+		&::placeholder{
+			color: lighten($dark, 65%);
+		}
+	}
+}
+
+input{
+	&.form-control{
+
+		border-radius: 26px;
+	}
+}
+
+textarea {
+	resize: none;
+}
+
+.section-title{
+	margin-bottom: 1rem;
+	position: relative;
+	width: fit-content;
+
+	&.light{
+		color: $white;
+	}
+}
+
+.ml-auto{
+	margin-left: auto;
+}

@@ -1,0 +1,13 @@
+.btn{
+	border-radius: 26px;
+    padding: 0.8rem 2rem;
+	color: $white;
+
+	@media only screen and (max-width: 600px) {
+		width: 100%;
+	} 
+
+	&:hover, &:focus, &:active {
+		color: $white;
+	}
+}
